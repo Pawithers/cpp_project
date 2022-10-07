@@ -1,0 +1,9 @@
+list(APPEND LEET_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
+list(APPEND LEET_SOURCES functions.cpp)
+
+# prepend the current path to all object files
+list(TRANSFORM LEET_SOURCES PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/)
+
+# add variables to parent scope
+set(LEET_INCLUDE_DIRS ${LEET_INCLUDE_DIRS} PARENT_SCOPE)
+set(LEET_SOURCES ${LEET_SOURCES} PARENT_SCOPE)
